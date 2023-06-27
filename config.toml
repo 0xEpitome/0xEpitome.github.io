@@ -1,4 +1,4 @@
-baseURL = "0xEpitome.github.io/"
+baseURL = "0xepitome.github.io/"
 title = "0xEpitome"
 
 theme = "hugo-theme-puppet"
