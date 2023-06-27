@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-puppet"]
+	path = themes/hugo-theme-puppet
+	url = https://github.com/roninro/hugo-theme-puppet.git
