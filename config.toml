@@ -1,7 +1,7 @@
 baseURL = "0xEpitome.github.io/"
 title = "0xEpitome"
 
-theme = "puppet"
+theme = "hugo-theme-puppet"
 #themesDir = "../.."
 
 copyright = ""
