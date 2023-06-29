@@ -1,5 +1,5 @@
 ---
-title: "CTF-Writeups"
+title: "Africa battle ctf 2023"
 summary: "writeups"
 categories: ["Post","writeups","ctfs"]
 tags: ["post","writeups"]

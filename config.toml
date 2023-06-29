@@ -51,7 +51,7 @@ weight = -100
 identifier = "Blog"
 name = "Blog"
 url = "/Blog"
-weight = 20
+weight = 5
 [[menu.main]]
 identifier = "about"
 name = "About"
@@ -62,7 +62,11 @@ identifier = "archive"
 name = "Archive"
 url = "/archive/"
 weight = 10
-
+[[menu.main]]
+identifier = "CTF-writeups"
+name = "CTF-writeups"
+url = "/ctf-writeups/"
+weight = 5
 
 [params]
 author = "0xEpitome"
