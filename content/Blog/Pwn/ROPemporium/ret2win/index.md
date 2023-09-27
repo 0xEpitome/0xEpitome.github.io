@@ -34,10 +34,10 @@ I will use my favorite one.
 ### Using gdb and cyclic.
 Start with cyclic 100 to get random characters to overflow the buffer.
 <pre>aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaa</pre>
-We need to break right after the reads function so that we see what happens in the stack. We set a breakpoint at mov function after reads function. ![image](cap9.PNG) next we can run the program and paste the cyclic pattern generated.
+We need to break right after the read function so that we see what happens in the stack. We set a breakpoint at mov function after reads function. ![image](cap9.PNG) next we can run the program and paste the cyclic pattern generated.
 ![image](cap10.PNG) ![image](cap11.PNG) The program stopped since we hit a breakpoint, nice! Next command we will type c to continue.
 ![image](cap12.PNG)
-The program now stopped due to sigsev(segmentation fault). Now since this is an x64 program to determine our offset we will copy the value of rsp since that is the stack pointer. The value is "kaaalaaa"
+The program now stopped due to sigsegv(segmentation fault). Now since this is an x64 program to determine our offset we will copy the value of rsp since that is the stack pointer. The value is "kaaalaaa"
 Now use cyclic -l "kaaalaaa" to find the offset. ![image](cap13.PNG). The offset is 40. Now we can develop our exploit using pwntools.
 
 
