@@ -1,7 +1,7 @@
 ---
 title: "Buckeye CTF 2023"
 summary: "writeups"
-categories: ["Post","writeups","ctfs"."pwn", "rev"]
+categories: ["Post","writeups","ctfs","pwn","rev"]
 tags: ["post","writeups"]
 header_img: img/buckeye.png
 #externalUrl: ""
@@ -91,7 +91,8 @@ int main(void) {
 ```
 We see a relatively easy program that has 4 case functions(for a lack of better word) i.e joke,weather guess and quit. We also see a print_flag function which opens flag.txt. So we need a way to execute the flag function. Let's run the program to see what it does.
 
-![image](b1.png). We see the 4 options, so when we try to input a number that is not on the options say 0, definitely ```else if(atoi(buf)>4){
+![image](b1.png). 
+We see the 4 options, so when we try to input a number that is not on the options say 0, definitely ```else if(atoi(buf)>4)
 	    printf("That's not an option\n");
 	    exit(0);``` 
 will be called. So what prevents us from just calling the flag function directly? Absolutely nothing.
