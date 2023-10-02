@@ -3,7 +3,7 @@ title: "Buckeye CTF 2023"
 summary: "writeups"
 categories: ["Post","writeups","ctfs","pwn","rev"]
 tags: ["post","writeups"]
-header_img: img/buckeye.png
+header_img: img/buck3.png
 #externalUrl: ""
 #showSummary: true
 date: 2023-10-01
