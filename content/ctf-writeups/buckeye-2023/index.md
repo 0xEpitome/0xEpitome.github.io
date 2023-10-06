@@ -171,7 +171,8 @@ int main(void) {
 
     return 0;
 }
-``` In basic explanation of the code, it has 2 function that is print_flag(which is our goal) and main function. The main function sets an integer flag to 0xaabdcdee and initializes a buffer of 50 bytes. Then it asks a basic question of entering your favorite number. Then it does fgets of 0x50(80 bytes). There vuln there is buffer overflow since we can add more bytes than the declared ones which were 50 bytes. Next is an if statement which has the flag set to a value and if that value is called then it calls the print_flag function which has our flag. So to develop our exploit:
+``` 
+In basic explanation of the code, it has 2 function that is print_flag(which is our goal) and main function. The main function sets an integer flag to 0xaabdcdee and initializes a buffer of 50 bytes. Then it asks a basic question of entering your favorite number. Then it does fgets of 0x50(80 bytes). There vuln there is buffer overflow since we can add more bytes than the declared ones which were 50 bytes. Next is an if statement which has the flag set to a value and if that value is called then it calls the print_flag function which has our flag. So to develop our exploit:
 
 ```python
 
@@ -269,7 +270,8 @@ undefined8 main(int param_1,char **param_2)
 The most basic explanation of this code, there is a part in the code where local c is set to 0 then ivarl is set to strcmp "./magicball". here is point 1, the way I understood this was, we need to change the name for 8ball to magic8ball that is the first conditon the other condition was we need a value like "flag" when running the file so that it can execute the flag function.
 
 ```bash
-./magic8ball "please I need the flag```
+./magic8ball "please I need the flag" 
+```
 
 ![image](b4.png)
 
