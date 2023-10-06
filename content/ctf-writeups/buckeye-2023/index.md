@@ -171,7 +171,7 @@ int main(void) {
 
     return 0;
 }
-``` 
+```
 In basic explanation of the code, it has 2 function that is print_flag(which is our goal) and main function. The main function sets an integer flag to 0xaabdcdee and initializes a buffer of 50 bytes. Then it asks a basic question of entering your favorite number. Then it does fgets of 0x50(80 bytes). There vuln there is buffer overflow since we can add more bytes than the declared ones which were 50 bytes. Next is an if statement which has the flag set to a value and if that value is called then it calls the print_flag function which has our flag. So to develop our exploit:
 
 ```python
