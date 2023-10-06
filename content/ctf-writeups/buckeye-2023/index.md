@@ -96,7 +96,7 @@ We see the 4 options, so when we try to input a number that is not on the option
 	    printf("That's not an option\n");
 	    exit(0);``` 
 will be called. So what prevents us from just calling the flag function directly? Absolutely nothing.
-Here is my solve script which was generated when I patched the binary using pwninit, but this can just be done with one command :laugh:
+Here is my solve script which was generated when I patched the binary using pwninit, but this can just be done with one command, sigh!
 
 ```python
 #!/usr/bin/env python3
@@ -140,7 +140,7 @@ Run the script and you get the flag.
 
 #### Starter Buffer (Pwn)
 
-This was another pretty easy, the creators of this CTF were generous enough to provide the source code of the challenges.
+This was another pretty easy challenge, the creators of this CTF were generous enough to provide the source code of the challenges.
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -171,8 +171,12 @@ int main(void) {
 
     return 0;
 }
+<<<<<<< HEAD
 ``` 
 In basic explanation of the code, it has 2 function that is print_flag(which is our goal) and main function. The main function sets an integer flag to 0xaabdcdee and initializes a buffer of 50 bytes. Then it asks a basic question of entering your favorite number. Then it does fgets of 0x50(80 bytes). There vuln there is buffer overflow since we can add more bytes than the declared ones which were 50 bytes. Next is an if statement which has the flag set to a value and if that value is called then it calls the print_flag function which has our flag. So to develop our exploit:
+=======
+``` In basic explanation of the code, it has 2 functions that is print_flag(which is our goal) and main function. The main function sets an integer flag to 0xaabdcdee and initializes a buffer of 50 bytes. Then it asks a basic question of entering your favorite number. Then it does fgets of 0x50(80 bytes). The vuln there is buffer overflow since we can add more bytes than the declared ones which were 50 bytes. Next is an if statement which has the flag set to a value and if that value is called then it calls the print_flag function which has our flag. So to develop our exploit:
+>>>>>>> 60f94021b01fea5b976eeeb479ac148c62b18d86
 
 ```python
 
@@ -267,7 +271,7 @@ undefined8 main(int param_1,char **param_2)
   return 0;
 }
 ```
-The most basic explanation of this code, there is a part in the code where local c is set to 0 then ivarl is set to strcmp "./magicball". here is point 1, the way I understood this was, we need to change the name for 8ball to magic8ball that is the first conditon the other condition was we need a value like "flag" when running the file so that it can execute the flag function.
+The most basic explanation of this code, there is a part in the code where local c is set to 0 then ivarl is set to strcmp "./magicball". here is point 1, the way I understood this was, we need to change the name for 8ball to magic8ball that is the first conditon the other condition was, we need a value like "flag" when running the file so that it can execute the flag function.
 
 ```bash
 ./magic8ball "please I need the flag" 
