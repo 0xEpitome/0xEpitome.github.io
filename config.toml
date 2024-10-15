@@ -108,7 +108,3 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 [taxonomies]
     series = 'series'
     tags = 'tags'
-
-[module]
-  [module.hugoVersion]
-    min = "0.41.0"
