@@ -6,8 +6,15 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cryptominer Based Security Events in AWS</title>
+      <link>//localhost:1313/posts/cryptominer/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/cryptominer/</guid>
+      <description>AWS DDOS</description>
+    </item>
     <item>
       <title>Knight 2024</title>
       <link>//localhost:1313/posts/ctf-writeups/knight24/</link>
