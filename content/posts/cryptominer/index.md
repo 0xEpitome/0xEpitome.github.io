@@ -10,13 +10,12 @@ draft: false
 ---
 
 
-### Introduction
 Hello Everyone, it has been a minute since my last blog but 
 ![image](back.webp)
 
 I have been recently doing [OCH](https://www.ongozacyberhub.org/) which is a good mastery(you should check them out), I have been specializing on the cloud security path since I am new to the field. In our track we were to do a project based on cloud specifically AWS, our mentor [Dennis Mensa](https://gh.linkedin.com/in/dennisawermensah) gave us a good [resource](https://workshops.aws/) to choose from since the AWS cloud security is wide.
 
-Upon going through the workshops I decided to go with [Cryptominer Based Security Events](https://catalog.us-east-1.prod.workshops.aws/workshops/ea9c0361-001f-4194-963e-06b07c3e5d6b/en-US)
+Upon going through the workshops I decided to go with [Cryptominer Based Security Events](https://catalog.us-east-1.prod.workshops.aws/workshops/ea9c0361-001f-4194-963e-06b07c3e5d6b/en-US) which is a workshop where we will start five EC2 instances using a CloudFormation template in order to mimic a cryptomining security event. By sending DNS queries to well-known cryptomining sites, these five EC2 instances will simulate cryptomining activity. After that, you will learn how to use the AWS CIRT (Customer Incident Response Team) to identify evidence of unauthorized activity and be exposed to some of the procedures and tools in response to similar incidents. 
 
 This is a blog that will be covering how I did that.
 
@@ -131,7 +130,7 @@ Time for Our detections skills!
 
 Using the environment created in the preceding sections, we will examine the simulated security incident involving the production of cryptomining resources. Questions that are frequently asked during a security event involving cryptomining will open each section. Each section's detection techniques will offer strategies for locating the answers to the queries as well as extra data pertinent to an inquiry.
 
-#### AWS CloudTrail Logs
+### AWS CloudTrail Logs
 AWS CloudTrail gives us control over storage, analysis, and remediation efforts by tracking and documenting account activity throughout your AWS infrastructure. Athena will be used in ths section to review and query the CloudTrail logs. Below are questions that were used as a guide for investigation.
 
 #### Questions - AWS CloudTrail
@@ -336,7 +335,7 @@ In our case it had A and AAAA records
 ![image](image-33.png)
 
 
-#### Amazon VPC Flow logs
+### Amazon VPC Flow logs
 VPC Flow logging allows you to capture details about the IP traffic to and from network interfaces within your VPC. The flow log data can be published to Amazon CloudWatch Logs or Amazon S3. Once a flow log is created, you can access and review its data from the specified destination. VPC Flow logging was enabled in your environment during the Setup section via CloudFormation, and it will help us analyze traffic associated with the simulated crypto mining activity conducted in the Simulation section. We will use Amazon Athena to review and query the VPC Flow Logs.
 There are several methods to identify potential indicators of compromise related to crypto mining activity using VPC Flow logs. Some key indicators include:
 
@@ -422,7 +421,7 @@ ORDER BY
 Additional Athena queries related to VPC logs can be found [here](https://github.com/aws-samples/aws-incident-response-playbooks-workshop/blob/main/playbooks/crypto_mining/EC2_crypto_mining.md)
 
 
-#### Amazon GuardDuty
+### Amazon GuardDuty
 Amazon GuardDuty is a threat detection service that constantly monitors your AWS accounts and workloads for potential malicious activity, providing detailed security findings to help with visibility and remediation. GuardDuty was already activated in our environment during the Setup phase using the CloudFormation template and is expected to detect the simulated crypto mining activity carried out in the Simulation section.
 
 We can now move to GuardDuty in AWS to view GuardDuty findings.
@@ -454,7 +453,8 @@ cat instance_ids.txt | sed 's/ /\n/g' | sort -n | uniq`
 
 We can see now in this script GuardDuty provided us with valuable info as well as 5 EC2 instances which 2 more were created in "tdir-workshop" 
 
-#### Here are some few things I learnt during this process:
+### Lessons Learnt
+Here are some few things I learnt during this process:
 - **Simulating Cryptomining Activity**: 
   - Used AWS CloudShell to simulate a cryptomining-related security event.
   - Event populated CloudTrail, VPC Flow logs, and triggered GuardDuty findings.
