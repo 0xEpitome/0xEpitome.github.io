@@ -6,7 +6,7 @@ tags: ["AWS", "Crypto", "detection"]
 description: "Cryptominer Based Security Events using AWS Tools"
 showSummary: true
 date: 2024-11-04
-draft: true
+draft: false
 ---
 
 
